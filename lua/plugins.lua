@@ -51,11 +51,17 @@ return require('packer').startup(function(use)
 	 use { 'evanleck/vim-svelte' }
 	 use { 'pangloss/vim-javascript' }
 	 use { 'HerringtonDarkholme/yats.vim' }
-	 use { 'neoclide/coc.nvim', run = 'npm install' }
-	  use {'romgrk/barbar.nvim', requires = {
-  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-}}
+	 use { 'neoclide/coc.nvim',
+		  config = function()
+		      local fn = vim.fn
+				coc_nvim_path = fn.stdpath('data')..'/site/pack/packer/start/coc.nvim/'
+		      fn.system({'npm', 'install'}, coc_nvim_path)
+		  end
+    }
+    use {'romgrk/barbar.nvim', requires = {
+		  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+		  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    }}
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
