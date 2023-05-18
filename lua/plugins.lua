@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
 		  config = function()
 		      local fn = vim.fn
 				coc_nvim_path = fn.stdpath('data')..'/site/pack/packer/start/coc.nvim/'
-		      fn.system({'npm', 'install'}, coc_nvim_path)
+		      -- fn.system({'npm', 'install'}, coc_nvim_path) --For some reason it executes in the current working directory.
 		  end
     }
     use {'romgrk/barbar.nvim', requires = {
