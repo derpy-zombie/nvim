@@ -58,10 +58,6 @@ return require('packer').startup(function(use)
 		      -- fn.system({'npm', 'install'}, coc_nvim_path) --For some reason it executes in the current working directory.
 		  end
     }
-    use {'romgrk/barbar.nvim', requires = {
-		  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-		  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    }}
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {

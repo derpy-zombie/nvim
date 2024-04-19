@@ -4,7 +4,7 @@ require('options')
 require('keymaps')
 -- Plugin handling
 require('plugins')
--- Colorscheme
+-- Colorscheme 
 require('colorscheme')
 -- LSP
 require('lsp')
