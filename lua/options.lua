@@ -3,8 +3,9 @@ vim.opt.clipboard = "unnamedplus" -- use system clipboard
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 vim.opt.mouse = "a" -- Allow use of mouse
 -- Tab options
-vim.opt.tabstop = 3
-vim.opt.softtabstop = 3
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 -- UI config
 vim.opt.number = true
 vim.opt.relativenumber = true
