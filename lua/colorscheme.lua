@@ -1,8 +1,10 @@
 -- define your colorscheme here
-local colorscheme = 'catppuccin-latte'
 
-local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not is_ok then
-    vim.notify('colorscheme ' .. colorscheme .. ' not found!')
-    return
-end
+local theme = os.getenv('THEME') == 'prefer-dark' and 'macchiato' or 'latte'
+
+require('catppuccin').setup({
+    flavour = theme,
+})
+
+vim.cmd.colorscheme 'catppuccin'
+
