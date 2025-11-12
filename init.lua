@@ -3,8 +3,6 @@ require('options')
 -- Keymaps
 require('keymaps')
 -- Plugin handling
-require('plugins')
+require('config.lazy')
 -- Colorscheme 
 require('colorscheme')
--- LSP
-require('lsp')

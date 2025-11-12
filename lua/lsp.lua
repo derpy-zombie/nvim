@@ -1,3 +1,6 @@
+--vim.lsp.config['nu'].setup({})
+--vim.lsp.enable('nu')
+
 require('mason').setup({
     ui = {
         icons = {
