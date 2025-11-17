@@ -1,18 +1,12 @@
---vim.lsp.config['nu'].setup({})
---vim.lsp.enable('nu')
+# This file is to configure lsp
 
-require('mason').setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
+vim.diagnostic.config({
+    virtual_text = true, --Show inline warn/err
+    signs = true --Symbols in gutter
+    underline = true -- Underline problem
+    severity_sort = true -- Sort by severity
+    float = {
+        border = 'rounded',
+        source = 'always' -- Where the errors come from
     }
-})
-
-require('mason-lspconfig').setup({
-    -- A list of servers to automatically install if they're not already installed
-	 -- Check available lsp's at https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    ensure_installed = { 'pylsp', 'lua_ls', 'rust_analyzer', 'ts_ls', 'cssls', 'cssmodules_ls', 'eslint', 'svelte', 'tailwindcss', 'bashls' },
 })
