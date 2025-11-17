@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd({'CursorHold', 'CursorHoldI'}, {
         {
             border = 'rounded',
             focusable = false,
-            prefix = '●'
+            --prefix = '●'
         }
     )
   end
