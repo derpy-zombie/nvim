@@ -1,8 +1,6 @@
 return {
     'neovim/nvim-lspconfig',
     config = function()
-        local lspconfig = vim.lsp.config
-
         -- Scan directory.
         local lsp_dir = vim.fn.stdpath('config') .. '/lua/lsp'
         -- Required for async I/O operations
@@ -27,12 +25,8 @@ return {
                     local mod_name = 'lsp.' .. server
                     local ok, config = pcall(require, mod_name)
                     if ok and type(config) == 'table' then
-                        if lspconfig[server] then
-                            vim.lsp.config(server, config)
-                            vim.lsp.enable(server)
-                        else
-                            vim.notify('LSP server not found for' .. server, vim.log.levels.error)
-                        end
+                        vim.lsp.config(server, config)
+                        vim.lsp.enable(server)
                     else
                         vim.notify('Failed to load config from ' .. mod_name, vim.log.levels.error)
                     end

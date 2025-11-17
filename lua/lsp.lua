@@ -16,15 +16,18 @@ vim.diagnostic.config({
 })
 
 vim.api.nvim_create_autocmd({'CursorHold', 'CursorHoldI'}, {
-  callback = function()
-    vim.diagnostic.open_float(
-        nil,
-        {
-            border = 'rounded',
-            focusable = false,
-            --prefix = '●'
-        }
-    )
-  end
+    callback = function()
+        local mode = vim.api.nvim_get_mode().mode
+        if mode == 'n' then
+            vim.diagnostic.open_float(
+                nil,
+                {
+                    border = 'rounded',
+                    focusable = false,
+                    --prefix = '●'
+                }
+            )
+        end
+    end
 })
 

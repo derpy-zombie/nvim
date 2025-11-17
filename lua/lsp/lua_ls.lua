@@ -9,13 +9,15 @@ return {
                 path = { 'lua/?.lua', 'lua/?/init.lua' }
             },
             diagnostics = {
-                globals = { 'vim' }
+                globals = { 'vim', 'vim.uv' }
             },
             workspace = {
                 checkThirdParty = false,
                 library = {
                     vim.env.VIMRUNTIME,
-                    vim.fn.stdpath('config')
+                    vim.env.VIMRUNTIME .. '/lua',
+                    vim.fn.stdpath('config'),
+                    vim.api.nvim_get_runtime_file('', true)
                 }
             },
             telemetry = {
