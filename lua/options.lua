@@ -15,3 +15,5 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+-- 
+vim.o.updatetime = 250  -- default is usually 4000 (4s)

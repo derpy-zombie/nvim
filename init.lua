@@ -4,5 +4,7 @@ require('options')
 require('keymaps')
 -- Plugin handling
 require('config.lazy')
+-- LSP configuration (diagnostics)
+require('lsp')
 -- Colorscheme 
 require('colorscheme')
