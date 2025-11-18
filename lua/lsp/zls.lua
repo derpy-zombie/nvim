@@ -1,3 +1,4 @@
+-- Install with system pkg manager => paru zls
 return {
     cmd = { 'zls' },
     filetypes = { 'zig', 'zir' },

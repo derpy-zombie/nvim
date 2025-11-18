@@ -1,3 +1,4 @@
+-- Install with npm install -g pyright
 return {
     cmd = { 'pyright-langserver', '--stdio' },
     filetypes = { 'python' },

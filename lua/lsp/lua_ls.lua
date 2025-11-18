@@ -1,3 +1,4 @@
+-- Install with system pkg manager => paru lua-language-server
 return {
     cmd = { 'lua-language-server' },
     filetypes = { 'lua' },

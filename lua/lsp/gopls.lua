@@ -1,3 +1,4 @@
+-- Install with go install golang.org/x/tools/gopls@latest
 return {
     cmd = { 'gopls' },
     filetypes = { 'go', 'gomod', 'gowork', 'gotemplate' },

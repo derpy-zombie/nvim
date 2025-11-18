@@ -1,3 +1,4 @@
+-- Default installed with nu.
 return {
   cmd = { 'nu', '--lsp' },
   filetypes = { 'nushell' },

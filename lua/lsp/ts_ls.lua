@@ -1,3 +1,4 @@
+-- Install with npm install -g typescript typescript-language-server
 return {
     cmd = { 'typescript-language-server', '--stdio' },
     filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'vue' },
