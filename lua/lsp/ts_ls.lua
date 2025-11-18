@@ -3,9 +3,11 @@ return {
     filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'vue' },
     init_options = {
         plugins = {
-            name = '@vue/typescript-plugin',
-            localtion = os.getenv('HOME') .. '/.local/share/fnm/node-versions/v22.21.1/installation/lib/node_modules',
-            languages = { 'vue' }
+            {
+                name = '@vue/typescript-plugin',
+                localtion = os.getenv('HOME') .. '/.local/share/fnm/node-versions/v22.21.1/installation/lib/node_modules',
+                languages = { 'vue' }
+            }
         }
     },
     root_dir = function(bufnr, on_dir)
