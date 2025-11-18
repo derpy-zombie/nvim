@@ -6,7 +6,7 @@ return {
         plugins = {
             {
                 name = '@vue/typescript-plugin',
-                localtion = os.getenv('HOME') .. '/.local/share/fnm/node-versions/v22.21.1/installation/lib/node_modules',
+                location = os.getenv('HOME') .. '/.local/share/fnm/node-versions/v22.21.1/installation/lib/node_modules',
                 languages = { 'vue' }
             }
         }
