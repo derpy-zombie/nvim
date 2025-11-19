@@ -18,4 +18,6 @@ vim.opt.smartcase = true
 -- LSP options
 vim.o.updatetime = 250  -- default is usually 4000 (4s)
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+-- Executin non-vim commands (Allow config.nu)
+vim.opt.shellcmdflag = "--login --stdin --no-newline -c"
 
