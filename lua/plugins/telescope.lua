@@ -1,5 +1,3 @@
-local builtin = require('telescope.builtin')
-
 return {
     'nvim-telescope/telescope.nvim',
     tag = 'v0.1.9',
