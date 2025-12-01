@@ -3,7 +3,7 @@ return {
     config = function()
         require("nvim-treesitter.configs").setup {
             parser_install_dir = vim.fn.stdpath('data') .. '/site',
-            ensure_installed = { 'nu', 'typescript', 'go', 'zig' },
+            ensure_installed = { 'nu', 'typescript', 'go', 'zig', 'yuck' },
             highlight = {
                 enable = true,            -- Enable syntax highlighting
             },
