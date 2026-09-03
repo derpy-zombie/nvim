@@ -6,5 +6,3 @@ require('config.lazy')
 require('keymaps')
 -- LSP configuration (diagnostics)
 require('lsp')
--- Colorscheme 
-require('colorscheme')
