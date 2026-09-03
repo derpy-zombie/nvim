@@ -1,4 +1,10 @@
 -- General options for vim
+-- Specific clipboard build for WSL (shut up err from win32yank)
+vim.g.clipboard = vim.fn.has("wsl") == 1 and {
+  name = "wsl-native",
+  copy = { ["+"] = "win32yank.exe -i --crlf", ["*"] = "win32yank.exe -i --crlf" },
+  paste = { ["+"] = "win32yank.exe -o --lf", ["*"] = "win32yank.exe -o --lf" },
+} or nil
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 vim.opt.mouse = "a" -- Allow use of mouse
