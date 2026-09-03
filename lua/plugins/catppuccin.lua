@@ -12,9 +12,13 @@ return {
                 local result = handle:read("*a") or ""
                 handle:close()
 
-                if result:match("uint32%s+1") or result:match("1") then
+                -- Extract the numeric value from DBus output: 0 = Default/Light, 1 = Dark, 2 = Light
+                local scheme = result:match("(%d+)")
+
+                if scheme == "2" or scheme == "0" then
                     return "light"
                 end
+    
                 return "dark"
             end
 
