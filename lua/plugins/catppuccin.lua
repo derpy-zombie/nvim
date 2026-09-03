@@ -12,8 +12,8 @@ return {
                 local result = handle:read("*a") or ""
                 handle:close()
 
-                -- Extract the numeric value from DBus output: 0 = Default/Light, 1 = Dark, 2 = Light
-                local scheme = result:match("(%d+)")
+                -- Matches the number after 'uint32 ' specifically, ignoring 'uint32' itself
+                local scheme = result:match("uint32%s+(%d+)")
 
                 if scheme == "2" or scheme == "0" then
                     return "light"
