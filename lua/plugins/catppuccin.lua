@@ -12,9 +12,13 @@ return {
                 local result = handle:read("*a") or ""
                 handle:close()
 
-                if result:match("uint32%s+1") or result:match("1") then
+                -- Matches the number after 'uint32 ' specifically, ignoring 'uint32' itself
+                local scheme = result:match("uint32%s+(%d+)")
+
+                if scheme == "2" or scheme == "0" then
                     return "light"
                 end
+    
                 return "dark"
             end
 
