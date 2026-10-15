@@ -10,5 +10,9 @@ return {
         else
             on_dir(vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr)))
         end
-    end
+    end,
+    -- Set on_attach so gopls is used instead of `go doc`
+    on_attach = function(_, bufnr)
+        vim.bo[bufnr].keywordprg = ""
+    end,
 }
