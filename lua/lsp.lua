@@ -38,6 +38,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {clear = true}),
     callback = function(event)
         local opts = { buffer = event.buf, silent = true, desc = 'Hover Documentation'}
+        -- Clear any keywordprg hogging K
+        vim.bo[event.buf].keywordprg = ""
+
         -- Press 'K' to show info/docs in floating window.
         vim.keymap.set('n', 'K', function()
             vim.lsp.buf.hover({
